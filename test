@@ -1,0 +1,6 @@
+FROM debian:jessie
+MAINTAINER pepito@grillo.es
+RUN apt update && apt install apache2 -y
+RUN rm -rf /var/lib/apt/lists/*
+CMD ["apachectl", "-DFOREGROUND"]
+EXPOSE 80
